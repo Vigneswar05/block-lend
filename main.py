@@ -16,6 +16,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.get("/")
+def read_root():
+    return {"message": "BlockLend Backend is running successfully!"}
+
 # ---------------- LOAD ML MODEL ----------------
 model = joblib.load("risk_model.pkl")
 
