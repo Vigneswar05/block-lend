@@ -14,8 +14,8 @@ function LoanHistory() {
         }
 
         const endpoint = user.role === "Lender"
-            ? "http://127.0.0.1:8000/all-loans"
-            : `http://127.0.0.1:8000/borrower-loans/${user.email}`;
+            ? "https://blocklend-backend.onrender.com/all-loans"
+            : `https://blocklend-backend.onrender.com/borrower-loans/${user.email}`;
 
         fetch(endpoint)
             .then(res => res.json())

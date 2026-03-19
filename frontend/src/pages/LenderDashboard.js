@@ -13,7 +13,7 @@ function LenderDashboard() {
     if (!user) navigate("/login");
 
     const fetchLoans = () => {
-      fetch("http://127.0.0.1:8000/all-loans")
+      fetch("https://blocklend-backend.onrender.com/all-loans")
         .then(res => res.json())
         .then(data => setLoans(data))
         .catch(err => console.error("Error fetching loans:", err));
@@ -26,7 +26,7 @@ function LenderDashboard() {
 
   const predictRisk = async (id) => {
     try {
-      const res = await fetch(`http://127.0.0.1:8000/predict-loan/${id}`, { method: "POST" });
+      const res = await fetch(`https://blocklend-backend.onrender.com/predict-loan/${id}`, { method: "POST" });
       const data = await res.json();
       setLoans(loans.map(loan => loan.id === id ? { ...loan, ...data } : loan));
     } catch (err) {
@@ -37,7 +37,7 @@ function LenderDashboard() {
 
   const approveLoan = async (id) => {
     try {
-      const res = await fetch(`http://127.0.0.1:8000/approve-loan/${id}`, { method: "POST" });
+      const res = await fetch(`https://blocklend-backend.onrender.com/approve-loan/${id}`, { method: "POST" });
       const data = await res.json();
       setLoans(loans.map(loan => loan.id === id ? { ...loan, ...data } : loan));
       alert("Loan Approved in system. Now you can fund it on blockchain.");
@@ -63,7 +63,7 @@ function LenderDashboard() {
       alert("Loan Funded on Blockchain successfully!");
 
       // Update backend status to Funded
-      await fetch(`http://127.0.0.1:8000/update-loan-status/${loan.id}?status=Funded`, { method: "POST" });
+      await fetch(`https://blocklend-backend.onrender.com/update-loan-status/${loan.id}?status=Funded`, { method: "POST" });
 
     } catch (err) {
 

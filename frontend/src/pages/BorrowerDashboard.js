@@ -44,7 +44,7 @@ function BorrowerDashboard() {
 
   useEffect(() => {
     if (user) {
-      fetch(`http://127.0.0.1:8000/borrower-loans/${user.email}`)
+      fetch(`https://blocklend-backend.onrender.com/borrower-loans/${user.email}`)
         .then(res => res.json())
         .then(data => setLoans(data))
         .catch(err => console.error("Error fetching loans:", err));
@@ -54,7 +54,7 @@ function BorrowerDashboard() {
   const deleteLoan = async (id, status) => {
     if (status === "Approved") return alert("Approved loans cannot be deleted");
     try {
-      const res = await fetch(`http://127.0.0.1:8000/delete-loan/${id}`, { method: "DELETE" });
+      const res = await fetch(`https://blocklend-backend.onrender.com/delete-loan/${id}`, { method: "DELETE" });
       if (!res.ok) throw new Error("Failed to delete loan");
       setLoans(loans.filter(l => l.id !== id));
       addNotification("Loan Deleted", `Loan #${id} has been deleted.`);
@@ -73,7 +73,7 @@ function BorrowerDashboard() {
       alert("Loan cancelled on blockchain successfully!");
 
       // Update backend status to Cancelled
-      await fetch(`http://127.0.0.1:8000/update-loan-status/${loan.id}?status=Cancelled`, { method: "POST" });
+      await fetch(`https://blocklend-backend.onrender.com/update-loan-status/${loan.id}?status=Cancelled`, { method: "POST" });
 
       addNotification("Blockchain Update", `Loan #${loan.blockchain_id} cancelled.`);
 
@@ -110,7 +110,7 @@ function BorrowerDashboard() {
       alert("Loan repaid on blockchain successfully!");
 
       // Update backend status to Repaid
-      await fetch(`http://127.0.0.1:8000/update-loan-status/${loan.id}?status=Repaid`, { method: "POST" });
+      await fetch(`https://blocklend-backend.onrender.com/update-loan-status/${loan.id}?status=Repaid`, { method: "POST" });
 
       addNotification("Blockchain Update", `Loan #${loan.blockchain_id} repaid.`);
 
@@ -131,7 +131,7 @@ function BorrowerDashboard() {
   useEffect(() => {
     const interval = setInterval(() => {
       if (user) {
-        fetch(`http://127.0.0.1:8000/borrower-loans/${user.email}`)
+        fetch(`https://blocklend-backend.onrender.com/borrower-loans/${user.email}`)
           .then(res => res.json())
           .then(data => {
             data.forEach(newLoan => {

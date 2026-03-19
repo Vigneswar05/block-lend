@@ -42,7 +42,7 @@ function ApplyLoan() {
       };
 
       console.log("Fetching prediction from AI model...");
-      const res = await fetch("http://127.0.0.1:8000/predict-only", {
+      const res = await fetch("https://blocklend-backend.onrender.com/predict-only", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload)
@@ -80,7 +80,7 @@ function ApplyLoan() {
         interest_rate: predictionData.interest_rate
       };
 
-      await fetch("http://127.0.0.1:8000/apply-loan", {
+      await fetch("https://blocklend-backend.onrender.com/apply-loan", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(finalPayload)
