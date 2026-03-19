@@ -1,0 +1,531 @@
+/* ===== GLOBAL ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #f0f4f8, #e2e8f0);
+  /* soft gradient */
+  color: #111827;
+}
+
+
+/* ===== NAVBAR ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 60px;
+  background: #ffffff;
+  border-bottom: 1px solid #d1d5db;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.nav-logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links a {
+  margin-left: 25px;
+  color: #374151;
+  font-weight: 500;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  color: #2563eb;
+}
+
+.nav-group {
+  display: flex;
+  align-items: center;
+  border-right: 1px solid #e5e7eb;
+  padding-right: 25px;
+  margin-left: 25px;
+}
+
+.nav-group a {
+  margin-left: 15px;
+}
+
+.nav-button {
+  background: #2563eb;
+  color: #fff !important;
+  padding: 10px 22px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.3s;
+  border: none;
+  cursor: pointer;
+  margin-left: 25px;
+}
+
+.nav-button:hover {
+  background: #1e40af;
+  transform: translateY(-1px);
+}
+
+.wallet-pill {
+  display: flex;
+  align-items: center;
+  background: #f3f4f6;
+  padding: 8px 16px;
+  border-radius: 20px;
+  margin-left: 25px;
+  border: 1px solid #e5e7eb;
+}
+
+.wallet-pill .dot {
+  width: 8px;
+  height: 8px;
+  background: #10b981;
+  border-radius: 50%;
+  margin-right: 8px;
+  box-shadow: 0 0 8px #10b981;
+}
+
+.wallet-pill span {
+  font-family: monospace;
+  font-size: 13px;
+  color: #374151;
+}
+
+
+/* ===== HERO SECTION ===== */
+.hero {
+  text-align: center;
+  padding: 140px 20px;
+  background: linear-gradient(to bottom, #ffffff, #e0e7ff);
+}
+
+.hero h1 {
+  font-size: 58px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: #111827;
+}
+
+.hero span {
+  color: #2563eb;
+}
+
+.hero p {
+  font-size: 20px;
+  color: #374151;
+  max-width: 750px;
+  margin: auto;
+  line-height: 1.6;
+}
+
+.hero-button {
+  margin-top: 40px;
+  padding: 16px 40px;
+  background: #2563eb;
+  border: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.hero-button:hover {
+  background: #1e40af;
+  transform: translateY(-2px);
+}
+
+/* ===== AUTH CARD ===== */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 85vh;
+  background: linear-gradient(135deg, #f0f4f8, #e2e8f0);
+}
+
+.auth-card {
+  width: 420px;
+  padding: 50px;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+}
+
+.auth-card h2 {
+  margin-bottom: 30px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.auth-card input,
+.auth-card select {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 18px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.auth-card input:focus,
+.auth-card select:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 8px rgba(37, 99, 235, 0.3);
+}
+
+.auth-card button {
+  width: 100%;
+  padding: 15px;
+  border-radius: 25px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.auth-card button:hover {
+  background: #1e40af;
+}
+
+/* ===== DASHBOARD ===== */
+.dashboard {
+  padding: 60px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f0f4f8, #e2e8f0);
+}
+
+
+/* ===== GLOBAL ===== */
+body {
+  margin: 0;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #f0f4f8, #e2e8f0);
+  color: #111827;
+}
+
+/* ===== DASHBOARD HEADER ===== */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.dashboard-header-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* ===== LOGOUT BUTTON ===== */
+.logout-btn {
+  background: #2563eb;
+  color: white;
+  padding: 12px 26px;
+  border-radius: 25px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.logout-btn:hover {
+  background: #1e40af;
+  transform: translateY(-1px);
+}
+
+/* ===== LOAN CARD ===== */
+.loan-card {
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  margin-bottom: 25px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.07);
+  border-left: 6px solid #2563eb;
+  transition: 0.3s;
+}
+
+.loan-card button {
+  margin-top: 15px;
+  padding: 10px 22px;
+  border-radius: 25px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.loan-card button:hover {
+  background: #1e40af;
+}
+
+/* ===== NOTIFICATIONS BELL ===== */
+.bell-container {
+  position: relative;
+  cursor: pointer;
+  font-size: 24px;
+  color: #374151;
+}
+
+.bell-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: #ef4444;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.bell-dropdown {
+  position: absolute;
+  right: 0;
+  top: 35px;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  width: 280px;
+  max-height: 350px;
+  overflow-y: auto;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  z-index: 10;
+}
+
+.bell-dropdown div {
+  padding: 10px 15px;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bell-dropdown div:hover {
+  background: #f3f4f6;
+}
+
+/* ===== PROFESSIONAL TABLE ===== */
+.loan-table {
+  width: 100%;
+  margin-top: 30px;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+.loan-table thead {
+  background: #2563eb;
+}
+
+.loan-table th {
+  padding: 18px;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  letter-spacing: 0.5px;
+}
+
+.loan-table td {
+  padding: 18px;
+  font-size: 14px;
+  color: #374151;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.loan-table tbody tr:hover {
+  background: #f3f4f6;
+  transform: scale(1.01);
+}
+
+/* Status Styling */
+.status-pending {
+  background: #fef3c7;
+  color: #b45309;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status-approved {
+  background: #dcfce7;
+  color: #166534;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Buttons */
+.table-delete-btn,
+.table-action-btn,
+.table-approve-btn {
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: none;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.table-delete-btn {
+  background: #ef4444;
+  color: white;
+}
+
+.table-delete-btn:hover {
+  background: #b91c1c;
+}
+
+.table-action-btn {
+  background: #2563eb;
+  color: white;
+}
+
+.table-action-btn:hover {
+  background: #1e40af;
+}
+
+.table-approve-btn {
+  background: #16a34a;
+  color: white;
+  margin-left: 8px;
+}
+
+.table-approve-btn:hover {
+  background: #166534;
+}
+
+/* Wallet and New Buttons */
+.wallet-info {
+  background: #f3f4f6;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-family: monospace;
+  color: #374151;
+  border: 1px solid #d1d5db;
+  margin-left: 20px;
+}
+
+.table-fund-btn {
+  background: #7c3aed;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: none;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: 8px;
+  transition: 0.3s;
+}
+
+.table-fund-btn:hover {
+  background: #6d28d9;
+  transform: scale(1.05);
+}
+
+.table-fund-btn:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+.table-cancel-btn {
+  background: #f59e0b;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: none;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+.table-cancel-btn:hover {
+  background: #d97706;
+}
+
+.table-repay-btn {
+  background: #10b981;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: none;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.table-repay-btn:hover {
+  background: #059669;
+}
+
+/* History Styles */
+.status-pill {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.status-repaid {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.status-cancelled {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.status-pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.status-approved {
+  background: #ede9fe;
+  color: #5b21b6;
+}
+
+.status-funded {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.row-repaid {
+  background-color: #f0fdf4;
+}
+
+.history-summary {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border-left: 4px solid #7c3aed;
+}
+
+/* End of File */
