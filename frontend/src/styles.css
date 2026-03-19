@@ -52,6 +52,7 @@ a {
   font-weight: 800;
   background: linear-gradient(135deg, #60a5fa, #c084fc);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   letter-spacing: -0.5px;
 }
@@ -170,6 +171,7 @@ a {
   background: linear-gradient(to right, #60a5fa, #c084fc, #60a5fa);
   background-size: 200% auto;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: shine 3s linear infinite;
 }
@@ -568,12 +570,67 @@ h2 {
   align-self: flex-end;
 }
 
+/* ===== HAMBURGER MENU ===== */
+.hamburger-icon {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  z-index: 101;
+}
+
+.hamburger-icon .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #f8fafc;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.hamburger-icon .bar.open:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.hamburger-icon .bar.open:nth-child(2) {
+  opacity: 0;
+}
+.hamburger-icon .bar.open:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
 /* ===== MOBILE RESPONSIVENESS ===== */
 @media (max-width: 768px) {
+  .hamburger-icon {
+    display: flex;
+  }
+
   .navbar {
     padding: 15px 5%;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(15px);
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
+    padding: 30px 5%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transform: translateY(-150%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+    z-index: 90;
+  }
+
+  .nav-links.mobile-open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
   }
   
   .nav-group {
@@ -584,12 +641,9 @@ h2 {
     justify-content: center;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 10px 0;
-  }
-  
-  .nav-links {
-    width: 100%;
-    justify-content: center;
+    padding: 15px 0;
+    flex-direction: column;
+    gap: 15px;
   }
   
   .nav-button, .wallet-pill {
