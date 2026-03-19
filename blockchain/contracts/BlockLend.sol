@@ -18,6 +18,31 @@ contract BlockLend {
         details[user].role = role;
     }
 
+    function registerUser(
+        string memory _name,
+        string memory _email,
+        string memory _pan,
+        uint256 _salary,
+        Role _role
+    ) external {
+        require(!details[msg.sender].isRegistered, "User already registered");
+        details[msg.sender] = Detail({
+            name: _name,
+            email: _email,
+            panNumber: _pan,
+            salary: _salary,
+            role: _role,
+            isRegistered: true
+        });
+        emit UserRegistered(msg.sender, _name, _role);
+    }
+
+    event UserRegistered(address indexed user, string name, Role role);
+
+    function getUser(address _user) external view returns (Detail memory) {
+        require(details[_user].isRegistered, "User not found");
+        return details[_user];
+    }
 
     enum LoanStatus {
         Requested,
@@ -28,10 +53,12 @@ contract BlockLend {
     }
 
     struct Detail {
-        bytes16 panNumber;
+        string panNumber;
         string name;
         uint256 salary;
         Role role;
+        string email;
+        bool isRegistered;
     }
 
     mapping(address => Detail) public details;
