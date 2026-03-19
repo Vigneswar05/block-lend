@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { getContract, connectWallet } from "../blockchain/ethersService";
+import { getContract } from "../blockchain/ethersService";
 import { BrowserProvider } from "ethers";
 
 function Login() {
